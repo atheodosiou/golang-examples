@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	//VARIABLE DECLARATIONS
 	//var card string ="Ace of Spades"
@@ -11,14 +9,15 @@ func main() {
 	// fmt.Println(card)
 
 	//Slice Declaration
-	cards := []string{"Ace of Spades", newCard()}
+	cards := deck{"Ace of Spades", newCard()}
 	//Append new item on a slice
 	cards = append(cards, "Six of Spades")
 
 	//Loops
-	for i, card := range cards {
-		fmt.Println(i, card)
-	}
+	// for i, card := range cards {
+	// 	fmt.Println(i, card)
+	// }
+	cards.print()
 }
 
 func newCard() string {
