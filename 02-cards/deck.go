@@ -26,3 +26,8 @@ func (d deck) print() { // <= This is a reciever!
 		fmt.Println(i, card)
 	}
 }
+
+//This is how we return multiple values fron a function
+func deal(d deck, handSise int) (deck, deck) {
+	return d[:handSise], d[handSise:]
+}
