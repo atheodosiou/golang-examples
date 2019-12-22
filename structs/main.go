@@ -29,13 +29,15 @@ func main() {
 			zipCode: 54621,
 		},
 	}
-	tasos.print()
-	tasos.updateName("Tasos")
+
+	//Pointer
+	tasosPointer := &tasos
+	tasosPointer.updateName("Tasos")
 	tasos.print()
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
 
 func (p person) print() {
