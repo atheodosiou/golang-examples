@@ -16,38 +16,61 @@ type contactInfo struct {
 type person struct {
 	firstName string
 	lastName  string
-	contact   contactInfo
+	contactInfo
 }
 
 func main() {
 	fmt.Println("Working with structs!")
-	//First type of declaration
-	//This approach depends on the order we list out our properties...
-
-	// tasos := person{"Anastasios", "Theodosiou"}
-	// fmt.Println("Hello ", tasos.firstName+" "+tasos.lastName)
-
-	//Second type of declaration
-
-	// tasos := person{firstName: "Anastasios", lastName: "Theodosiou"}
-	// fmt.Println("Hello ", tasos.firstName+" "+tasos.lastName)
-
-	//Third way
-	// var tasos person
-	// tasos.firstName = "Anastasios"
-	// tasos.lastName = "Theodosiou"
-	// tasos.contact.email = "anastasios.theodosiou@gmail.com"
-	// tasos.contact.zipCode = 54621
-
 	tasos := person{
 		firstName: "Anastasios",
 		lastName:  "Theodoisou",
-		contact: contactInfo{
+		contactInfo: contactInfo{
 			email:   "anastasios.theodosiou@gmail.com",
 			zipCode: 54621,
 		},
 	}
-	fmt.Println(tasos)
-	// '%+v' list out every single property with its value
-	fmt.Printf("%+v", tasos)
+	tasos.print()
+	tasos.updateName("Tasos")
+	tasos.print()
 }
+
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
+}
+
+// func main() {
+// 	fmt.Println("Working with structs!")
+// 	//First type of declaration
+// 	//This approach depends on the order we list out our properties...
+
+// 	// tasos := person{"Anastasios", "Theodosiou"}
+// 	// fmt.Println("Hello ", tasos.firstName+" "+tasos.lastName)
+
+// 	//Second type of declaration
+
+// 	// tasos := person{firstName: "Anastasios", lastName: "Theodosiou"}
+// 	// fmt.Println("Hello ", tasos.firstName+" "+tasos.lastName)
+
+// 	//Third way
+// 	// var tasos person
+// 	// tasos.firstName = "Anastasios"
+// 	// tasos.lastName = "Theodosiou"
+// 	// tasos.contact.email = "anastasios.theodosiou@gmail.com"
+// 	// tasos.contact.zipCode = 54621
+
+// 	tasos := person{
+// 		firstName: "Anastasios",
+// 		lastName:  "Theodoisou",
+// 		contact: contactInfo{
+// 			email:   "anastasios.theodosiou@gmail.com",
+// 			zipCode: 54621,
+// 		},
+// 	}
+// 	fmt.Println(tasos)
+// 	// '%+v' list out every single property with its value
+// 	fmt.Printf("%+v", tasos)
+// }
