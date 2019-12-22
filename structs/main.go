@@ -31,8 +31,8 @@ func main() {
 	}
 
 	//Pointer
-	tasosPointer := &tasos
-	tasosPointer.updateName("Tasos")
+	// tasosPointer := &tasos
+	tasos.updateName("Tasos")
 	tasos.print()
 }
 
